@@ -11,13 +11,15 @@ use BasicApp\Exceptions\ForbiddenException;
 abstract class BaseMemberController extends \BasicApp\Core\Controller
 {
 
+    protected $userService = 'user';
+
     protected $user;
 
     public function __construct()
     {
         parent::__construct();
 
-        $this->user = Services::user()->getUser();
+        $this->user = service($this->userService)->getUser();
 
         if (!$this->user)
         {
