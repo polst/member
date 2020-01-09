@@ -5,5 +5,8 @@
         "psr-4": {
             "BasicApp\\Member\\" : ""
         }
+    },
+    "require": {
+        "denis303/codeigniter4-auth": "*"
     }
 }
