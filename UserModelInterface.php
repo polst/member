@@ -4,6 +4,11 @@
  * @license MIT
  * @link http://basic-app.com
  */
-class MemberController extends BaseMemberController
+namespace BasicApp\Member;
+
+interface UserModelInterface
 {
+
+    public function getPrimaryKey();
+
 }

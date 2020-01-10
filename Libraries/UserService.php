@@ -4,6 +4,8 @@
  * @license MIT
  * @link http://basic-app.com
  */
-class MemberController extends BaseMemberController
+namespace BasicApp\Member\Libraries;
+
+class UserService extends BaseUserService
 {
 }
