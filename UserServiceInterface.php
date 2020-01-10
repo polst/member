@@ -2,8 +2,6 @@
 
 namespace BasicApp\Member;
 
-use BasicApp\User\Models\User;
-
 interface UserServiceInterface extends \Denis303\Auth\AuthServiceInterface
 {
 
@@ -13,6 +11,6 @@ interface UserServiceInterface extends \Denis303\Auth\AuthServiceInterface
 
     public function logout();
 
-    public function login(User $user, bool $rememberMe = true);
+    public function login(UserModelInterface $user, bool $rememberMe = true);
 
 }
