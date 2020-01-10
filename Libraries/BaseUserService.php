@@ -6,13 +6,38 @@
  */
 namespace BasicApp\Member\Libraries;
 
-use BasicApp\User\Models\User;
+use BasicApp\User\Models\UserModel;
+use BasicApp\Member\UserModelInterface;
 use Exception;
 
-abstract class BaseUserService extends \Denis303\Auth\AuthService implements \BasicApp\Member\UserServiceInterface
+abstract class BaseUserService extends \Denis303\Auth\UserService implements \BasicApp\Member\UserServiceInterface
 {
 
-    public function login(User $user, bool $rememberMe = true)
+    protected $_user;
+
+    public function getUser()
+    {
+        if (!$this->_user)
+        {
+            $userId = $this->getUserId();
+
+            if ($userId)
+            {
+                $userModel = new UserModel;
+
+                $this->_user = $userModel->find($userId);
+
+                if (!$this->_user)
+                {
+                    $this->unsetUserId();
+                }                
+            }
+        }
+
+        return $this->_user;
+    }
+
+    public function login(UserModelInterface $user, bool $rememberMe = true)
     {
         $id = $user->getPrimaryKey();
 
