@@ -6,6 +6,7 @@
  */
 namespace BasicApp\Member\Libraries;
 
+use BasicApp\Helpers\Url;
 use BasicApp\User\Models\UserModel;
 use BasicApp\Member\UserModelInterface;
 use Exception;
