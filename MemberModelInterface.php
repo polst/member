@@ -2,7 +2,7 @@
 
 namespace BasicApp\Member;
 
-interface UserModelInterface
+interface MemberModelInterface
 {
 
     public function getPrimaryKey();
