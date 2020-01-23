@@ -9,13 +9,17 @@ namespace BasicApp\Member;
 interface UserServiceInterface extends \Denis303\Auth\UserServiceInterface
 {
 
-    public function getUser();
+    public function can(string $permission) : bool; 
 
-    public function getLoginUrl();
+    public function hasRole(string $role) : bool;
 
-    public function getLogoutUrl();
+    public function getUser() : ?UserModelInterface;
 
-    public function logout();
+    public function getLoginUrl() : string;
+
+    public function getLogoutUrl() : string;
+
+    public function logout() : void;
 
     public function login(UserModelInterface $user, bool $rememberMe = true);
 

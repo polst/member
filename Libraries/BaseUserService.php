@@ -16,7 +16,31 @@ abstract class BaseUserService extends \Denis303\Auth\UserService implements \Ba
 
     protected $_user;
 
-    public function getUser()
+    public function can(string $permission) : bool
+    {
+        $user = $this->getUser();
+
+        if (!$user)
+        {
+            return false;
+        }
+
+        return true; // not implemented
+    }
+
+    public function hasRole(string $role) : bool
+    {
+        $user = $this->getUser();
+
+        if (!$user)
+        {
+            return false;
+        }
+
+        return true; // not implemented
+    }
+
+    public function getUser() : ?UserModelInterface
     {
         if (!$this->_user)
         {
@@ -50,21 +74,21 @@ abstract class BaseUserService extends \Denis303\Auth\UserService implements \Ba
         $this->setUserId($id, $rememberMe);
     }
 
-    public function logout()
+    public function logout() : void
     {
         $this->unsetUserId();
     }
 
     // ToDo: move to member module
 
-    public function getLoginUrl()
+    public function getLoginUrl() : string
     {
         return Url::createUrl('user/login');
     }
 
     // ToDo: move to member module
 
-    public function getLogoutUrl()
+    public function getLogoutUrl() : string
     {
         return Url::createUrl('user/logout');
     }
