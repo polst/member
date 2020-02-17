@@ -6,7 +6,7 @@
  */
 namespace BasicApp\Member\Events;
 
-class UserMenuEvent extends \BasicApp\Core\Event
+class MemberMenuEvent extends \BasicApp\Core\Event
 {
 
     public $items = [];

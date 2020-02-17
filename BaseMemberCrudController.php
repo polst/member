@@ -9,7 +9,7 @@ namespace BasicApp\Member;
 use BasicApp\Exceptions\ForbiddenException;
 use BasicApp\Crud\CrudTrait;
 
-abstract class BaseMemberCrudController extends \BasicApp\Core\Controller
+abstract class BaseMemberCrudController extends \BasicApp\Site\SiteController
 {
 
     use CrudTrait;

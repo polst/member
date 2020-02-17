@@ -8,7 +8,7 @@ namespace BasicApp\Member;
 
 use BasicApp\Exceptions\ForbiddenException;
 
-abstract class BaseMemberController extends \BasicApp\Core\Controller
+abstract class BaseMemberController extends \BasicApp\Site\SiteController
 {
 
     protected $userService = 'user';

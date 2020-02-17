@@ -7,6 +7,8 @@
         }
     },
     "require": {
-        "denis303/codeigniter4-auth": "*"
+        "basic-app/core": "*",
+        "denis303/codeigniter4-auth": "*",
+        "basic-app/site": "*"
     }
 }
