@@ -8,7 +8,7 @@ namespace BasicApp\Member\Libraries;
 
 use BasicApp\Helpers\Url;
 use BasicApp\User\Models\UserModel;
-use BasicApp\Member\UserModelInterface;
+use BasicApp\Member\UserInterface;
 use Exception;
 
 abstract class BaseUserService extends \Denis303\Auth\UserService implements \BasicApp\Member\UserServiceInterface
@@ -40,7 +40,7 @@ abstract class BaseUserService extends \Denis303\Auth\UserService implements \Ba
         return true; // not implemented
     }
 
-    public function getUser() : ?UserModelInterface
+    public function getUser() : ?UserInterface
     {
         if (!$this->_user)
         {
@@ -62,7 +62,7 @@ abstract class BaseUserService extends \Denis303\Auth\UserService implements \Ba
         return $this->_user;
     }
 
-    public function login(UserModelInterface $user, bool $rememberMe = true)
+    public function login(UserInterface $user, bool $rememberMe = true)
     {
         $id = $user->getPrimaryKey();
 

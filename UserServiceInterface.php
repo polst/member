@@ -13,7 +13,7 @@ interface UserServiceInterface extends \Denis303\Auth\UserServiceInterface
 
     public function hasRole(string $role) : bool;
 
-    public function getUser() : ?UserModelInterface;
+    public function getUser() : ?UserInterface;
 
     public function getLoginUrl() : string;
 
@@ -21,6 +21,6 @@ interface UserServiceInterface extends \Denis303\Auth\UserServiceInterface
 
     public function logout() : void;
 
-    public function login(UserModelInterface $user, bool $rememberMe = true);
+    public function login(UserInterface $user, bool $rememberMe = true);
 
 }
