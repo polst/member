@@ -6,7 +6,7 @@
  */
 namespace BasicApp\Member;
 
-interface UserModelInterface
+interface UserInterface
 {
 
     public function getPrimaryKey();
