@@ -20,5 +20,5 @@ class Member extends \BasicApp\Member\MemberController
     {
         return $this->render('index');
     }
-
+    
 }
