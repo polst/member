@@ -8,13 +8,17 @@ use BasicApp\System\SystemEvents;
 use BasicApp\Member\Filters\MemberFilter;
 use BasicApp\Helpers\Url;
 use BasicApp\Site\SiteEvents;
+use BasicApp\Member\MemberEvents;
 
-SystemEvents::onFilters(function($event)
+if (class_exists(SystemEvents::class))
 {
-    $event->aliases['memberIsLoggedIn'] = MemberFilter::class;
+    SystemEvents::onFilters(function($event)
+    {
+        $event->aliases['memberIsLoggedIn'] = MemberFilter::class;
 
-    $event->filters['memberIsLoggedIn'] = ['before' => ['/member/', '/member/*']];
-});
+        $event->filters['memberIsLoggedIn'] = ['before' => ['/member/', '/member/*']];
+    });
+}
 
 if (class_exists(SiteEvents::class))
 {
@@ -29,5 +33,13 @@ if (class_exists(SiteEvents::class))
                 'url' => Url::createUrl('member')
             ];
         }
+    });
+}
+
+if (class_exists(SiteEvents::class))
+{
+    SiteEvents::onMainLayout(function($event)
+    {
+        $event->params['userMenu'] = MemberEvents::memberMenu();
     });
 }
