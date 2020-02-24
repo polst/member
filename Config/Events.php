@@ -22,24 +22,10 @@ if (class_exists(SystemEvents::class))
 
 if (class_exists(SiteEvents::class))
 {
-    SiteEvents::onAccountMenu(function($event)
-    {
-        $user = service('user');
-
-        if ($user->getUser())
-        {
-            $event->items['member'] = [
-                'label' => t('member', 'Member'),
-                'url' => Url::createUrl('member')
-            ];
-        }
-    });
-}
-
-if (class_exists(SiteEvents::class))
-{
     SiteEvents::onMainLayout(function($event)
     {
         $event->params['userMenu'] = MemberEvents::memberMenu();
+
+        $event->params['accountMenu'] = MemberEvents::accountMenu();
     });
 }
