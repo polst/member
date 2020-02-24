@@ -48,7 +48,7 @@ abstract class BaseMemberEvents extends \CodeIgniter\Events\Events
 
     public static function accountMenu(array $items = [])
     {
-        $event = new SiteAccountMenuEvent;
+        $event = new AccountMenuEvent;
 
         $event->items = $items;
 
