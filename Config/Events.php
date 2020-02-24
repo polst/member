@@ -6,7 +6,6 @@
  */
 use BasicApp\System\SystemEvents;
 use BasicApp\Member\Filters\MemberFilter;
-use BasicApp\Helpers\Url;
 use BasicApp\Site\SiteEvents;
 use BasicApp\Member\MemberEvents;
 

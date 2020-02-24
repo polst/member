@@ -6,6 +6,7 @@
  */
 namespace BasicApp\Member;
 
+use BasicApp\Helpers\Url;
 use BasicApp\Member\Events\MemberMenuEvent;
 use BasicApp\Member\Events\AccountMenuEvent;
 
