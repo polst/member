@@ -10,5 +10,11 @@
         "basic-app/core": "*",
         "denis303/codeigniter4-auth": "*",
         "basic-app/site": "*"
-    }
+    },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/polst/core.git"
+        }
+    ]
 }
